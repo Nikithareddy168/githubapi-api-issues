@@ -31,13 +31,14 @@ public class Issue {
             return false;
         return true;
     }
-    @Override
+   @Override
     public String toString() {
         return "Issue [number=" + number + ", id=" + id + ", state=" + state
                 + ", title=" + title + ", body=" + body + ", createdAt="
                 + createdAt + ", closedAt=" + closedAt + ", user=" + user
                 + ", assignee=" + assignee + "]";
     }
+    
     public int getNumber() {
         return number;
     }
