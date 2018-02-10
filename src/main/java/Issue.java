@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Issue {
     int number;
-    int id;
+    long id;
     String state;
     String title;
     String body;
@@ -17,7 +17,7 @@ public class Issue {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + id;
+        result = prime * result + (int) (id ^ (id >>> 32));
         return result;
     }
 
@@ -51,11 +51,11 @@ public class Issue {
         this.number = number;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

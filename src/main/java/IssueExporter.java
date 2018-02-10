@@ -29,19 +29,18 @@ public class IssueExporter {
         Issue issue3 = new Issue();
         User user1 = new User();
         user1.setLogin("Nikithareddy168");
-        user1.setId(4554);
+        user1.setId(7067839);
 
         List<Issue> issuesList = new ArrayList<Issue>();
+        
         issue1.setNumber(1);
         issue1.setId(7067839);
-
         issue1.setUser(user1);
         issue1.setAssignee(user1);
         issue1.setId(4554);
         issue1.setState("open");
         issue1.setTitle("# Issue 1");
         issue1.setBody("This is Issue 1");
-        // issue1.setUser1("NikithaReddy168");
         issue1.setCreatedAt(new Date());
         issue1.setClosedAt(new Date());
         issuesList.add(issue1);
@@ -80,7 +79,7 @@ public class IssueExporter {
         }
 
         for (Issue i : issuesList) {
-            FileWriter fw = new FileWriter(f, true); // true is for append
+            FileWriter fw = new FileWriter(f, true); 
             BufferedWriter bw = new BufferedWriter(fw);
             try {
                 bw.append(i.toString());
