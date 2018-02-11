@@ -67,7 +67,7 @@ public class IssueExporter {
         issue3.setClosedAt(new Date());
         issuesList.add(issue3);
 
-        System.out.println("Collection Size : " + issuesList.size());
+        System.out.println("Number of Issues : " + issuesList.size());
 
         File f1 = new File("d:\\issues.txt");
         if (f1.exists()) {
