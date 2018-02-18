@@ -12,8 +12,9 @@ public class Issue {
     Date closedAt;
     User user;
     User assignee;
+   
 
-    @Override
+   @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
@@ -114,5 +115,7 @@ public class Issue {
     public void setAssignee(User assignee) {
         this.assignee = assignee;
     }
+
+   
 
 }
