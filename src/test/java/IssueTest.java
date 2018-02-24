@@ -40,9 +40,9 @@ public class IssueTest {
     
     @Test
     public void testToString() {
-            String toString = i1.toString();
-         
-            //assertTrue(toString.contains("Number=" + state));
+            System.out.println(i1.toString());
+            String str = "Issue [number=0, id=0, state=null, title=null, body=null, createdAt=null, closedAt=null, user=null, assignee=null]";
+            assertEquals(str, i1.toString());
         
     }
     

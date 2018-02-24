@@ -23,15 +23,11 @@ public class IssueParsertest {
         {
             FileReader file = new FileReader("sample-output.txt");
             BufferedReader reader = new BufferedReader(file);
-
-            // **** key is declared here in this block of code
-            
             String line = null;
             try {
                 line = reader.readLine();
             }
             catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
 
@@ -39,11 +35,10 @@ public class IssueParsertest {
                 key += "\n"+line;
                 line = reader.readLine();
             }
-            //System.out.println(key); // so key works
         }
     }
     @Test
-     public void parseIssuetest() throws IOException{
+     public void collectionSizetest() throws IOException{
          IssueParser isp = new IssueParser();
          List<Issue> ls1 = new ArrayList<Issue>();
          ls1 = isp.parseIssues(key);
@@ -51,8 +46,16 @@ public class IssueParsertest {
          assertEquals(3, ls1.size());
      }
     @Test
-    public void noOfIssuesTest(){
+    public void issuePropertiesTest() throws IOException{
         IssueParser isp = new IssueParser();
+        List<Issue> ls1 = new ArrayList<Issue>();
+        ls1 = isp.parseIssues(key);
+        for (int i = 0; i < ls1.size(); i++) {
+            Issue aName = ls1.get(i);
+            assertNull(aName.getClosedAt());
+            assertEquals("open",aName.getState());
+        }
+        
     }
     
 
