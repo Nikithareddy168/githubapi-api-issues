@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import main.java.Issue;
 import main.java.IssueParser;
 
 
@@ -20,7 +21,7 @@ public class IssueParsertest {
     @Before
     public void setUp() throws IOException {
         {
-            FileReader file = new FileReader("C:\\Users\\Nikitha\\Downloads\\sample-output.txt");
+            FileReader file = new FileReader("sample-output.txt");
             BufferedReader reader = new BufferedReader(file);
 
             // **** key is declared here in this block of code
@@ -38,14 +39,15 @@ public class IssueParsertest {
                 key += "\n"+line;
                 line = reader.readLine();
             }
-            System.out.println(key); // so key works
+            //System.out.println(key); // so key works
         }
     }
     @Test
-     public void parseIssuetest(){
+     public void parseIssuetest() throws IOException{
          IssueParser isp = new IssueParser();
-         List<String> ls1 = new ArrayList<String>();
+         List<Issue> ls1 = new ArrayList<Issue>();
          ls1 = isp.parseIssues(key);
+         System.out.println(ls1);
          assertEquals(3, ls1.size());
      }
     @Test
