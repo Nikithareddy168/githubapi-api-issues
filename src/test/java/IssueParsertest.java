@@ -1,4 +1,5 @@
 package test.java;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,9 +16,9 @@ import org.junit.Test;
 import main.java.Issue;
 import main.java.IssueParser;
 
-
 public class IssueParsertest {
     String key = "";
+
     @Before
     public void setUp() throws IOException {
         {
@@ -32,31 +33,32 @@ public class IssueParsertest {
             }
 
             while (line != null) {
-                key += "\n"+line;
+                key += "\n" + line;
                 line = reader.readLine();
             }
         }
     }
+
     @Test
-     public void collectionSizetest() throws IOException{
-         IssueParser isp = new IssueParser();
-         List<Issue> ls1 = new ArrayList<Issue>();
-         ls1 = isp.parseIssues(key);
-         System.out.println(ls1);
-         assertEquals(3, ls1.size());
-     }
+    public void collectionSizetest() throws IOException {
+        IssueParser isp = new IssueParser();
+        List<Issue> ls1 = new ArrayList<Issue>();
+        ls1 = isp.parseIssues(key);
+        System.out.println(ls1);
+        assertEquals(3, ls1.size());
+    }
+
     @Test
-    public void issuePropertiesTest() throws IOException{
+    public void issuePropertiesTest() throws IOException {
         IssueParser isp = new IssueParser();
         List<Issue> ls1 = new ArrayList<Issue>();
         ls1 = isp.parseIssues(key);
         for (int i = 0; i < ls1.size(); i++) {
             Issue aName = ls1.get(i);
             assertNull(aName.getClosedAt());
-            assertEquals("open",aName.getState());
+            assertEquals("open", aName.getState());
         }
-        
+
     }
-    
 
 }

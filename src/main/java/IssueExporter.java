@@ -32,7 +32,7 @@ public class IssueExporter {
         user1.setId(7067839);
 
         List<Issue> issuesList = new ArrayList<Issue>();
-        
+
         issue1.setNumber(1);
         issue1.setId(7067839);
         issue1.setUser(user1);
@@ -79,7 +79,7 @@ public class IssueExporter {
         }
 
         for (Issue i : issuesList) {
-            FileWriter fw = new FileWriter(f, true); 
+            FileWriter fw = new FileWriter(f, true);
             BufferedWriter bw = new BufferedWriter(fw);
             try {
                 bw.append(i.toString());

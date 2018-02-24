@@ -30,7 +30,7 @@ public class User {
     public String toString() {
         return "User [login=" + login + ", id=" + id + "]";
     }
-
+ 
     public String getLogin() {
         return login;
     }
