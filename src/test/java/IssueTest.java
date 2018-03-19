@@ -2,6 +2,8 @@ package test.java;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,13 +23,16 @@ public class IssueTest {
         i2 = new Issue();
         u1 = new User();
         u2 = new User();
+       
+      //  i1.setCreatedAt(new Date());
+      //  i1.setClosedAt(new Date());
 
     }
 
     @Test
     public void testEquals() {
-        // System.out.println(i1.hashCode()+":::::"+i2.hashCode());
-        // System.out.println(i1.equals(i2));
+        System.out.println(i1.hashCode()+":::::"+i2.hashCode());
+        System.out.println(i1.equals(i2));
         assertTrue(i1.equals(i2) && i1.equals(i2));
         assertTrue(u1.equals(u2) && u1.equals(u2));
     }
@@ -40,8 +45,13 @@ public class IssueTest {
 
     @Test
     public void testToString() {
+        i1.setNumber(1);
+        i1.setId(7067839);
+        i1.setState("open");
+        i1.setTitle("# Issue 1");
+        i1.setBody("This is Issue 1");
         System.out.println(i1.toString());
-        String str = "Issue [number=0, id=0, state=null, title=null, body=null, createdAt=null, closedAt=null, user=null, assignee=null]";
+        String str = "Issue [number=1, id=7067839, state=open, title=# Issue 1, body=This is Issue 1, createdAt=null, closedAt=null, user=null, assignee=null]";
         assertEquals(str, i1.toString());
 
     }
