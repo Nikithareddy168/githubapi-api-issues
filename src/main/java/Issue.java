@@ -2,7 +2,7 @@ package main.java;
 
 import java.util.Date;
 
-public class Issue {
+public class Issue implements Comparable<Issue> {
     int number;
     long id;
     String state;
@@ -113,6 +113,19 @@ public class Issue {
 
     public void setAssignee(User assignee) {
         this.assignee = assignee;
+    }
+
+    @Override
+    public int compareTo(Issue o) {
+        if (this.id == o.id) {
+            return 0;
+        }
+        else if (this.id < o.id) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
     }
 
 }

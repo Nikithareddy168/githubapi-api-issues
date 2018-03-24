@@ -22,24 +22,28 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 /**
- * A quick and dirty prototype of a GET request for GitHub issues.
- * Based on Apache HttpClient sample class ClientPreemptiveBasicAuthentication.java.
- * You will obviously need to improve this messy code to properly complete Lab #4. 
- * There is a main() method available for you to run this prototype.
- * You're welcome to change the code to use a different authentication approach as well.
- * Note the TODOs in the code.  Be sure that httpcore & httpclient jars are on the classpath.
+ * A quick and dirty prototype of a GET request for GitHub issues. Based on
+ * Apache HttpClient sample class ClientPreemptiveBasicAuthentication.java. You
+ * will obviously need to improve this messy code to properly complete Lab #4.
+ * There is a main() method available for you to run this prototype. You're
+ * welcome to change the code to use a different authentication approach as
+ * well. Note the TODOs in the code. Be sure that httpcore & httpclient jars are
+ * on the classpath.
  */
 public class GitHubRestClient {
 
     public static void main(String[] args) {
         GitHubRestClient prototype = new GitHubRestClient();
-        //IMPORTANT: don't commit your username and password to your repo!!!
-        String json = prototype.requestIssues("Nikithareddy168", "Nikitha168");
+        // IMPORTANT: don't commit your username and password to your repo!!!
+        String json = prototype.requestIssues("Nikithareddy168", "Nikitha168",
+                "open");
         System.out.println(json);
     }
 
-    public String requestIssues(String username, String password) {
+    public String requestIssues(String username, String password,
+            String state) {
         String jsonContent = null;
+
         HttpHost target = new HttpHost("api.github.com", 443, "https");
         CredentialsProvider credsProvider = new BasicCredentialsProvider();
         credsProvider.setCredentials(
@@ -56,17 +60,22 @@ public class GitHubRestClient {
         HttpClientContext localContext = HttpClientContext.create();
         localContext.setAuthCache(authCache);
 
-        //TODO adjust the URI to match your repo name
-        HttpGet httpget = new HttpGet("/repos/SoftwareStudioSpring2018/githubapi-issues-Nikithareddy168/issues");
+        // TODO adjust the URI to match your repo name
+        String str1 = "/repos/SoftwareStudioSpring2018/githubapi-issues-Nikithareddy168/issues";
+        String str2 = "?state=";
+        // System.out.println(str1+str2);
+        HttpGet httpget = new HttpGet(str1 + str2 + state);
 
         try {
-            CloseableHttpResponse response = httpclient.execute(target, httpget, localContext);
-            System.out.println(response.getStatusLine()); 
-            //TODO check for status 200 before proceeding
+            CloseableHttpResponse response = httpclient.execute(target, httpget,
+                    localContext);
+            System.out.println(response.getStatusLine());
+            // TODO check for status 200 before proceeding
 
             HttpEntity entity = response.getEntity();
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent()));
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(entity.getContent()));
 
             jsonContent = reader.readLine();
 
@@ -81,7 +90,7 @@ public class GitHubRestClient {
             e.printStackTrace();
         }
         finally {
-            //TODO close all resources
+            // TODO close all resources
         }
         return jsonContent;
     }

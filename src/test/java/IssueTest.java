@@ -23,20 +23,20 @@ public class IssueTest {
         i2 = new Issue();
         u1 = new User();
         u2 = new User();
-       
-      //  i1.setCreatedAt(new Date());
-      //  i1.setClosedAt(new Date());
+
+        // i1.setCreatedAt(new Date());
+        // i1.setClosedAt(new Date());
 
     }
 
     @Test
     public void testEquals() {
-        System.out.println(i1.hashCode()+":::::"+i2.hashCode());
+        System.out.println(i1.hashCode() + ":::::" + i2.hashCode());
         System.out.println(i1.equals(i2));
         assertTrue(i1.equals(i2) && i1.equals(i2));
         assertTrue(u1.equals(u2) && u1.equals(u2));
     }
-
+    
     @Test
     public void testHashcode() {
         assertTrue(i1.hashCode() == i2.hashCode());
@@ -54,6 +54,27 @@ public class IssueTest {
         String str = "Issue [number=1, id=7067839, state=open, title=# Issue 1, body=This is Issue 1, createdAt=null, closedAt=null, user=null, assignee=null]";
         assertEquals(str, i1.toString());
 
+    }
+
+    @Test
+    public void testCompareEq() {
+        i1.setId(5);
+        i2.setId(5);
+        assertEquals(0, i1.compareTo(i2));
+    }
+
+    @Test
+    public void testCompareGreater() {
+        i1.setId(5);
+        i2.setId(10);
+        assertEquals(1, i1.compareTo(i2));
+    }
+
+    @Test
+    public void testCompareLess() {
+        i1.setId(10);
+        i2.setId(5);
+        assertEquals(-1, i1.compareTo(i2));
     }
 
 }
