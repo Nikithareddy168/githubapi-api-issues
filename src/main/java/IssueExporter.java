@@ -35,7 +35,8 @@ public class IssueExporter {
         List<Issue> openIssuesList = closedParser.parseIssues(openJson);
         System.out.println("open  issues size  :" + openIssuesList.size());
         closedIssuesList.addAll(openIssuesList);
-        System.out.println("==========closed issues size  :" + closedIssuesList.size());
+        System.out.println(
+                "==========closed issues size  :" + closedIssuesList.size());
 
     }
 

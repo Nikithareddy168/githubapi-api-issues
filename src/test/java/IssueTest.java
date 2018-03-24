@@ -23,10 +23,6 @@ public class IssueTest {
         i2 = new Issue();
         u1 = new User();
         u2 = new User();
-
-        // i1.setCreatedAt(new Date());
-        // i1.setClosedAt(new Date());
-
     }
 
     @Test
@@ -36,7 +32,7 @@ public class IssueTest {
         assertTrue(i1.equals(i2) && i1.equals(i2));
         assertTrue(u1.equals(u2) && u1.equals(u2));
     }
-    
+
     @Test
     public void testHashcode() {
         assertTrue(i1.hashCode() == i2.hashCode());
