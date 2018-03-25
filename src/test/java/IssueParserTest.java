@@ -16,7 +16,7 @@ import org.junit.Test;
 import main.java.Issue;
 import main.java.IssueParser;
 
-public class IssueParsertest {
+public class IssueParserTest {
     String key = "";
 
     @Before
