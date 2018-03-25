@@ -91,8 +91,8 @@ public class GitHubRestClient {
         }
         finally {
             // TODO close all resources
-           httpget.abort();
-           
+            httpget.abort();
+
         }
         return jsonContent;
     }
