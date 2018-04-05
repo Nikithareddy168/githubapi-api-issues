@@ -35,11 +35,11 @@ public class IssueExporter {
         closedIssues.addAll(openIssues);
         System.out.println(
                 "==========closed issues size  :" + closedIssues.size());
-        File f1 = new File("d:\\issues.txt");
+        File f1 = new File("issues.txt");
         if (f1.exists()) {
             f1.delete();
         }
-        File f = new File("d:\\issues.txt");
+        File f = new File("issues.txt");
         if (f.exists()) {
             f.createNewFile();
         }

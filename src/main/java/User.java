@@ -7,6 +7,7 @@ public class User {
         final int prime = 31;
         int result = 1;
         result = prime * result + (int) (id ^ (id >>> 32));
+        System.out.println(result);
         return result;
     }
 
