@@ -1,5 +1,3 @@
-package test.java;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,9 +10,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import main.java.Issue;
-import main.java.IssueParser;
 
 public class IssueParserTest {
     String key = "";

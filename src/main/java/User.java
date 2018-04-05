@@ -1,5 +1,3 @@
-package main.java;
-
 public class User {
     String login;
     long id;
