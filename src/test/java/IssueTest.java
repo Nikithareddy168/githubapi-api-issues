@@ -19,24 +19,20 @@ public class IssueTest {
 
     @Test
     public void testEquals() {
-       // System.out.println(i1.hashCode() + ":::::" + i2.hashCode());
-        //System.out.println(i1.equals(i2));
-        assertEquals(true,i1.equals(i2));
+        // System.out.println(i1.hashCode() + ":::::" + i2.hashCode());
+        // System.out.println(i1.equals(i2));
+        assertEquals(true, i1.equals(i2));
     }
 
     @Test
     public void testNullEquals() {
-       
+
         assertEquals(false, i1.equals(null));
     }
-    
-    
-    
-  
-    
+
     @Test
     public void testHashcode() {
-        assertEquals(31,i1.hashCode());
+        assertEquals(31, i1.hashCode());
     }
 
     @Test

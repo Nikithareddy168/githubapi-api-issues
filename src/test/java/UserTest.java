@@ -15,17 +15,17 @@ public class UserTest {
 
     @Test
     public void testEquals() {
-        assertEquals(true,u1.equals(u2));
+        assertEquals(true, u1.equals(u2));
     }
 
     @Test
     public void testNullEquals() {
         assertEquals(false, u1.equals(null));
     }
-    
+
     @Test
     public void testHashcode() {
-        assertEquals(31,u1.hashCode());
+        assertEquals(31, u1.hashCode());
     }
 
 }
