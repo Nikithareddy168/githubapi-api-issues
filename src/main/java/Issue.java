@@ -117,7 +117,6 @@ public class Issue implements Comparable<Issue> {
         this.assignee = assignee;
     }
 
-    @Override
     public int compareTo(Issue o) {
         if (this.id == o.id) {
             return 0;

@@ -24,17 +24,17 @@ public class IssueExporter {
         System.out.println("Enter  password : ");
         String password = scanner.next();
         String closedJson = client.requestIssues(userName, password, "closed");
-        System.out.println("closed issues size  :" + closedJson);
+        // System.out.println("closed issues size :" + closedJson);
         List<Issue> closedIssues = closedParser.parseIssues(closedJson);
-        System.out.println("closed issues size  :" + closedIssues.size());
+        // System.out.println("closed issues size :" + closedIssues.size());
 
         String openJson = client.requestIssues(userName, password, "open");
-        System.out.println("open issues size  :" + openJson);
+        System.out.println("open issues  :" + openJson);
         List<Issue> openIssues = closedParser.parseIssues(openJson);
         System.out.println("open  issues size  :" + openIssues.size());
         closedIssues.addAll(openIssues);
-        System.out.println(
-                "==========closed issues size  :" + closedIssues.size());
+        // System.out.println("==========closed issues size :" +
+        // closedIssues.size());
         File f1 = new File("issues.txt");
         if (f1.exists()) {
             f1.delete();
